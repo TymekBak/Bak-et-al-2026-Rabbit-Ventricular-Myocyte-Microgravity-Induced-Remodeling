@@ -1,3 +1,0 @@
-make
-./MahajanRecorder Individuals/Baseline.txt Outcomes_n/Baseline.txt Outcomes_t/Baseline.txt
-./MahajanRecorder Individuals/Manuscript.txt Outcomes_n/Manuscript.txt Outcomes_t/Manuscript.txt
