@@ -147,7 +147,7 @@ int main(int argc, char *argv[]) {
         //Define Variables for Describing the Previous Time Step
         double Cai_old = 0;
         double Vm_old = 0;
-        //Define variables for calculating the extreme ionic concentrations and membrane potential values.
+        //Define variables for calculating the extreme ionic concentration and membrane potential values.
         double Cai_max = 0;
         double Cai_min = 100000;
         double CaSR_max = 0;
