@@ -231,9 +231,9 @@ int main(int argc, char *argv[]) {
         Vm_old = VM.v;
         Cai_old = VM.ci;
 
-        //At the transition point to the new BCL, record the outputs for the present BCL.
+        //At the transition point to the new BCL, record the outputs for the present BCL. The first 21 beats are skipped to allow the code to learn how to compute these biomarkers prior to the beginning of the recording interval.
         if(abs(t - BCL*n) <= (dt/10)){
-            if(n > 0){
+            if(n > 20){
                 Validation_Parameters_n << 0 << "\t";
                 Validation_Parameters_n << n << "\t";
                 Validation_Parameters_n << (APD_End - APD_Start) << "\t";
