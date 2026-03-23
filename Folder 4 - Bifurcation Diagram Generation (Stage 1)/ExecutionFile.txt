@@ -1,0 +1,15 @@
+make
+./MahajanRecorder Individuals/Baseline.txt Outcomes_n/Baseline.txt Outcomes_t/Baseline.txt
+./MahajanRecorder Individuals/Baseline_V1.txt Outcomes_n/Baseline_V1.txt Outcomes_t/Baseline_V1.txt
+./MahajanRecorder Individuals/Baseline_V2.txt Outcomes_n/Baseline_V2.txt Outcomes_t/Baseline_V2.txt
+./MahajanRecorder Individuals/Baseline_V3.txt Outcomes_n/Baseline_V3.txt Outcomes_t/Baseline_V3.txt
+./MahajanRecorder Individuals/Baseline_V4.txt Outcomes_n/Baseline_V4.txt Outcomes_t/Baseline_V4.txt
+./MahajanRecorder Individuals/Baseline_V5.txt Outcomes_n/Baseline_V5.txt Outcomes_t/Baseline_V5.txt
+./MahajanRecorder Individuals/Baseline_V6.txt Outcomes_n/Baseline_V6.txt Outcomes_t/Baseline_V6.txt
+./MahajanRecorder Individuals/Manuscript.txt Outcomes_n/Manuscript.txt Outcomes_t/Manuscript.txt
+./MahajanRecorder Individuals/Manuscript_V1.txt Outcomes_n/Manuscript_V1.txt Outcomes_t/Manuscript_V1.txt
+./MahajanRecorder Individuals/Manuscript_V2.txt Outcomes_n/Manuscript_V2.txt Outcomes_t/Manuscript_V2.txt
+./MahajanRecorder Individuals/Manuscript_V3.txt Outcomes_n/Manuscript_V3.txt Outcomes_t/Manuscript_V3.txt
+./MahajanRecorder Individuals/Manuscript_V4.txt Outcomes_n/Manuscript_V4.txt Outcomes_t/Manuscript_V4.txt
+./MahajanRecorder Individuals/Manuscript_V5.txt Outcomes_n/Manuscript_V5.txt Outcomes_t/Manuscript_V5.txt
+./MahajanRecorder Individuals/Manuscript_V6.txt Outcomes_n/Manuscript_V6.txt Outcomes_t/Manuscript_V6.txt
