@@ -1,5 +1,3 @@
-//This code is based on an example provided by Dr Daisuke Sato.
-//I adapted Dr Sato's makefile to run the code.
 #include "cell.h"
 #include <fstream>
 #include <iostream>
