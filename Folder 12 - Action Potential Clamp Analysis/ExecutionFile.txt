@@ -1,0 +1,3 @@
+make
+./MahajanRecorder Individuals/Baseline.txt Outcomes_n/Baseline.txt Outcomes_t/Baseline.txt AlternansThresholdGuess/Manuscript.txt
+./MahajanRecorder Individuals/Manuscript.txt Outcomes_n/Manuscript.txt Outcomes_t/Manuscript.txt AlternansThresholdGuess/Manuscript.txt
