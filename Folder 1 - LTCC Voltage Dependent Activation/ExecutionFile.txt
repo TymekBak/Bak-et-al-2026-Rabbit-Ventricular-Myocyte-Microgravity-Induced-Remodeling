@@ -1,0 +1,3 @@
+make
+./MahajanRecorder Individuals/Baseline.txt Results1/Baseline.txt Results2/Baseline.txt
+./MahajanRecorder Individuals/Model6.txt Results1/Model6.txt Results2/Model6.txt
