@@ -68,7 +68,7 @@ using namespace std;
 //2. Beat Number
 //3. APD
 //4. Maximum Cytoplasmic Calcium
-//5. Minimum Cytoplasmic Calcium
+//5. End Diastolic Calcium
 //6. Maximum SR Calcium
 //7. Minimum SR Calcium
 //8. Maximum Cytoplasmic Sodium
