@@ -1,0 +1,20 @@
+make
+Baseline_P119.txt Search Range350-80 APD Threshold: 176 CaT Threshold: 176
+Baseline_P147.txt Search Range350-80 APD Threshold: 155 CaT Threshold: 301
+Baseline_P187.txt Search Range350-80 APD Threshold: 135 CaT Threshold: 135
+Baseline_P203.txt Search Range350-80 APD Threshold: 176 CaT Threshold: 174
+Baseline_P23.txt Search Range350-80 APD Threshold: 109 CaT Threshold: 109
+Baseline_P312.txt Search Range350-80 APD Threshold: 94 CaT Threshold: 94
+Baseline_P313.txt Search Range350-80 APD Threshold: 107 CaT Threshold: 107
+Baseline_P411.txt Search Range350-80 APD Threshold: 153 CaT Threshold: 153
+Baseline_P452.txt Search Range350-80 APD Threshold: 150 CaT Threshold: 150
+Baseline_P458.txt Search Range350-80 APD Threshold: 174 CaT Threshold: 174
+Baseline_P472.txt Search Range350-80 APD Threshold: 284 CaT Threshold: 295
+Baseline_P50.txt Search Range350-80 APD Threshold: 119 CaT Threshold: 119
+Baseline_P519.txt Search Range350-80 APD Threshold: 144 CaT Threshold: 144
+Baseline_P599.txt Search Range350-80 APD Threshold: 124 CaT Threshold: 308
+Baseline_P726.txt Search Range350-80 APD Threshold: 97 CaT Threshold: 97
+Baseline_P829.txt Search Range350-80 APD Threshold: 147 CaT Threshold: 147
+Baseline_P913.txt Search Range350-80 APD Threshold: 129 CaT Threshold: 129
+Baseline_P943.txt Search Range350-80 APD Threshold: 147 CaT Threshold: 147
+Baseline_P970.txt Search Range350-80 APD Threshold: 111 CaT Threshold: 111

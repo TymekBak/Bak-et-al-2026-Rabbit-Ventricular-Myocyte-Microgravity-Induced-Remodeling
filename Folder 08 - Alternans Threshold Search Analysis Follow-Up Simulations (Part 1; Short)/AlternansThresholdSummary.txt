@@ -1,0 +1,8 @@
+make
+Baseline_P203.txt Search Range240-140 APD Threshold: 176 CaT Threshold: 174
+Baseline_P274.txt Search Range240-140 APD Threshold: 190 CaT Threshold: 191
+Baseline_P411.txt Search Range240-140 APD Threshold: 153 CaT Threshold: 153
+Baseline_P793.txt Search Range240-140 APD Threshold: 208 CaT Threshold: 209
+Baseline_P891.txt Search Range240-140 APD Threshold: 207 CaT Threshold: 207
+Baseline_P979.txt Search Range240-140 APD Threshold: 168 CaT Threshold: 168
+Baseline_P991.txt Search Range240-140 APD Threshold: 205 CaT Threshold: 205

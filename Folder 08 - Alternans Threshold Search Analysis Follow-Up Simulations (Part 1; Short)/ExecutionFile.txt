@@ -1,0 +1,8 @@
+make
+./MahajanRecorder Individuals/Baseline_P274.txt Outcomes_n/Baseline_P274.txt Outcomes_t/Baseline_P274.txt
+./MahajanRecorder Individuals/Baseline_P411.txt Outcomes_n/Baseline_P411.txt Outcomes_t/Baseline_P411.txt
+./MahajanRecorder Individuals/Baseline_P891.txt Outcomes_n/Baseline_P891.txt Outcomes_t/Baseline_P891.txt
+./MahajanRecorder Individuals/Baseline_P979.txt Outcomes_n/Baseline_P979.txt Outcomes_t/Baseline_P979.txt
+./MahajanRecorder Individuals/Baseline_P203.txt Outcomes_n/Baseline_P203.txt Outcomes_t/Baseline_P203.txt
+./MahajanRecorder Individuals/Baseline_P991.txt Outcomes_n/Baseline_P991.txt Outcomes_t/Baseline_P991.txt
+./MahajanRecorder Individuals/Baseline_P793.txt Outcomes_n/Baseline_P793.txt Outcomes_t/Baseline_P793.txt
