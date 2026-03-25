@@ -1,6 +1,6 @@
 %% Read the simulation output into MATLAB variables.
-% Baseline = readmatrix("Results2/Baseline.txt");
-% Manuscript = readmatrix("Results2/Model6.txt");
+Baseline = readmatrix("Results2/Baseline.txt");
+Manuscript = readmatrix("Results2/Model6.txt");
 
 %% Store the membrane potential and LTCC current traces in smaller variables.
 Vm1 = zeros(110000,111); 
@@ -47,29 +47,5 @@ for i = 1:400
         thresh2 = ~thresh2;
     end
 end
-
-figure(1)
-clf
-plot(ILTCC1)
-hold on
-%plot(ILTCC1_segment)
-yline(ILTCC1_threshold)
-
-figure(2)
-clf
-plot(ILTCC2)
-hold on
-%plot(ILTCC2_segment)
-yline(ILTCC2_threshold)
-
-figure(3)
-clf
-plot((ILTCC1_segment - min(ILTCC1_segment))/(max(ILTCC1_segment) - min(ILTCC1_segment)))
-hold on
-plot((ILTCC2_segment - min(ILTCC2_segment))/(max(ILTCC2_segment) - min(ILTCC2_segment)))
-xlabel("Time (ms)")
-ylabel("I_{LTCC} (A/F)")
-title("Vm = 0mV")
-legend("Baseline","Microgravity")
 
 (t0_5_ILTCC2 - t0_5_ILTCC1)/t0_5_ILTCC1*100

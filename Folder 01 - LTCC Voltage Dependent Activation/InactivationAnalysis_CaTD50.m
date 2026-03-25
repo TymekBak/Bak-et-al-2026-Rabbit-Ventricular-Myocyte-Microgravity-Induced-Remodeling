@@ -48,18 +48,4 @@ for i = 1:400
     end
 end
 
-figure(1)
-clf
-plot(ILTCC1)
-hold on
-%plot(ILTCC1_segment)
-yline(ILTCC1_threshold)
-
-figure(2)
-clf
-plot(ILTCC2)
-hold on
-%plot(ILTCC2_segment)
-yline(ILTCC2_threshold)
-
 (t0_5_ILTCC2 - t0_5_ILTCC1)/t0_5_ILTCC1*100
