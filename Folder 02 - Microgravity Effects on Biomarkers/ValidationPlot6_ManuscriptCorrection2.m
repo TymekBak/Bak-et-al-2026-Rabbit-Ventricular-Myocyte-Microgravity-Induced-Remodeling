@@ -6,7 +6,9 @@ change = [7.1582, -22.2024, -4.8404, -5.6628, 24.0654,19.4355,7.6218];
 % The names in parantheses correspond to the sources of data used in this
 % figure. The data distributions that were not expressed as standard error
 % were converted to standard error. On occassion this required assuming the
-% data is normally distributed.
+% data is normally distributed. If a source is listed twice that means measurements
+% were provided for two time points (Ibrahim and Ito) or two conditions (post-rest
+% and steady-state).
 % Data References:
 % Chang, H., Zhang, L., Xu, P.-T., Li, Q., Sheng, J.-J., Wang, Y.-Y., Chen, Y., Zhang, L.-N., & Yu, Z.-B. (2011). Nuclear translocation of calpain-2 regulates propensity toward apoptosis in cardiomyocytes of tail-suspended rats. J Cell Biochem, 112(2), 571–580. https://doi.org/10.1002/jcb.22947.
 % Forghani, P., Liu, W., Wang, Z., Ling, Z., Takaesu, F., Yang, E., Tharp, G.K., Nielsen, S., Doraisingam, S., Countryman, S., Davis, M.E., Wu, R., Jia, S., & Xu, C. (2025). Spaceflight alters protein levels and gene expression associated with stress response and metabolic characteristics in human cardiac spheroids. Biomaterials, 317, 123080. https://doi.org/10.1016/j.biomaterials.2024.123080.
