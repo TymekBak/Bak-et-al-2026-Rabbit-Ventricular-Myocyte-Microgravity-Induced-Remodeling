@@ -1,12 +1,3 @@
-%% Sensitivity Analyisis - part 3/3
-% 
-% S. Morotti, M. Nieves-Cintrón, M.A. Nystoriak, M.F. Navedo, E. Grandi.
-% Predominant contribution of L-type CaV1.2 channel stimulation to impaired
-% intracellular calcium and cerebral artery vasoconstriction in diabetic 
-% hyperglycemia. Channels. 2017. doi: 10.1080/19336950.2017.1293220.
-% 
-% Please, cite the above paper when using this code.
-
 %% main PLS
 close all
 clear all
