@@ -121,12 +121,12 @@ while(j <= 1000):
     
     #Store the necessary values in an array.
     outputfile[j][0] = Threshold
-    outputfile[j][1] = APD1_Post
-    outputfile[j][2] = APD2_Post
+    outputfile[j][1] = abs(APD1_Post)
+    outputfile[j][2] = abs(APD2_Post)
     outputfile[j][3] = Cai_Max1_Post - Cai_ED1_Post
     outputfile[j][4] = Cai_Max2_Post - Cai_ED2_Post
-    outputfile[j][5] = APD1_Pre
-    outputfile[j][6] = APD2_Pre
+    outputfile[j][5] = abs(APD1_Pre)
+    outputfile[j][6] = abs(APD2_Pre)
     outputfile[j][7] = Cai_Max1_Pre - Cai_ED1_Pre
     outputfile[j][8] = Cai_Max2_Pre - Cai_ED2_Pre
 
