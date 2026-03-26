@@ -32,7 +32,7 @@ while(j <= 1000):
     if((abs(Cn[j][0]) < abs(Cn[j][1])) or (abs(Cn[j][0]) < abs(Cn[j][2])) or (abs(Cn[j][0] + 1) < abs(Cn[j][5])) or (abs(Cn[j][0] + 1) < abs(Cn[j][6]))):
         APD_Exclusion = np.append(APD_Exclusion,j)
         j = j + 1
-    #Confirm that the alternans threshold meets the 5ms criterion
+    #Confirm that the alternans threshold meets the 5ms criterion. At the time of the analysis there was a typo in this analysis which prevented six individuals from being labeled for a more detailed review. All of these individuals appear to be near the threshold; therefore, it is assumed that the results of the study hold.
     if((abs(Cn[j][1] - Cn[j][2]) < 5) or (abs(Cn[j][5] - Cn[j][6]) >= 5)):
         Detection_Exclusion = np.append(Detection_Exclusion,j)
         print((np.array([(abs(Cn[j][1] - Cn[j][2])),(abs(Cn[j][5] - Cn[j][6]))])))
