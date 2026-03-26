@@ -8,10 +8,13 @@ import pandas
 def PercentChange(C):
     i = 0
     C0 = C[0]
-    while(i < len(C)):
-        C[i] = abs((C[i] - C0)/C0*100)
-        i = i + 1
-    return(C)
+    if((max(C) == 0) and (min(C) == 0)):
+        return(C)
+    else:
+        while(i < len(C)):
+            C[i] = abs((C[i] - C0)/C0*100)
+            i = i + 1
+        return(C)
 
 def CheckConvergence_APD_BFD(i,version):
     #Load the file of interest
@@ -21,7 +24,7 @@ def CheckConvergence_APD_BFD(i,version):
 
     #Identify all of the unique BCLs.
     PCLs = np.unique(outcomes_n_ref[0])
-    outputfile = np.zeros((len(PCLs), 7))
+    outputfile = np.zeros((len(PCLs), 8))
     i_BCL = 0
 
     while(i_BCL < len(PCLs)):
@@ -46,10 +49,10 @@ def CheckConvergence_APD_BFD(i,version):
         D50 = np.transpose(np.reshape(outcomes_n[9], shape=(100,-1)))
 
         #Compute the maximum percent change in each parameter after accounting for the existence of alternans. Then, store the results.
-        PercentChangeArray1 = np.array([np.max(PercentChange(APD[(n%2) == 0])),np.max(PercentChange(Cai_max[(n%2) == 0])),np.max(PercentChange(Cai_min[(n%2) == 0])),np.max(PercentChange(CaSR_max[(n%2) == 0])),np.max(PercentChange(CaSR_min[(n%2) == 0])),np.max(PercentChange(Nai_max[(n%2) == 0])),np.max(PercentChange(Nai_min[(n%2) == 0]))])
-        PercentChangeArray2 = np.array([np.max(PercentChange(APD[(n%2) == 1])),np.max(PercentChange(Cai_max[(n%2) == 1])),np.max(PercentChange(Cai_min[(n%2) == 1])),np.max(PercentChange(CaSR_max[(n%2) == 1])),np.max(PercentChange(CaSR_min[(n%2) == 1])),np.max(PercentChange(Nai_max[(n%2) == 1])),np.max(PercentChange(Nai_min[(n%2) == 1]))])
+        PercentChangeArray1 = np.array([np.max(PercentChange(APD[(n%2) == 0])),np.max(PercentChange(Cai_max[(n%2) == 0])),np.max(PercentChange(Cai_min[(n%2) == 0])),np.max(PercentChange(CaSR_max[(n%2) == 0])),np.max(PercentChange(CaSR_min[(n%2) == 0])),np.max(PercentChange(Nai_max[(n%2) == 0])),np.max(PercentChange(Nai_min[(n%2) == 0])),np.max(PercentChange(D50[(n%2) == 0]))])
+        PercentChangeArray2 = np.array([np.max(PercentChange(APD[(n%2) == 1])),np.max(PercentChange(Cai_max[(n%2) == 1])),np.max(PercentChange(Cai_min[(n%2) == 1])),np.max(PercentChange(CaSR_max[(n%2) == 1])),np.max(PercentChange(CaSR_min[(n%2) == 1])),np.max(PercentChange(Nai_max[(n%2) == 1])),np.max(PercentChange(Nai_min[(n%2) == 1])),np.max(PercentChange(D50[(n%2) == 1]))])
         PercentChangeValue = np.max(np.array([(PercentChangeArray1),(PercentChangeArray2)]),axis=0)
-        #print("PCL = " + str(BCL) + "\t Percent Change: " + str(PercentChangeValue))
+        print("PCL = " + str(BCL) + "\t Percent Change: " + str(PercentChangeValue))
         outputfile[i_BCL] = PercentChangeValue
         i_BCL = i_BCL + 1
 
@@ -70,9 +73,9 @@ def CheckConvergence_APD_BFD(i,version):
 
 #Use the previously defined functions to analyze the results.
 i = 0
-PercentChangeValues_Baseline = np.zeros((1001,7))
+PercentChangeValues_Baseline = np.zeros((1001,8))
 Individuals = np.zeros(1001)
-BCL = [274,793,411,891,979,991,203]
+BCL = [274,411,793,891,979,991,203]
 while(i <= 6):
     Individuals[i] = BCL[i]
     PercentChangeValues_Baseline[i] = CheckConvergence_APD_BFD(BCL[i],"Baseline")
