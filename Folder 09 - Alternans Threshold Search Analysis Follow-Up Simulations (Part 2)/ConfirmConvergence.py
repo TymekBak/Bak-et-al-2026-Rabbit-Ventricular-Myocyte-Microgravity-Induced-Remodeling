@@ -50,7 +50,7 @@ def CheckConvergence_APD_BFD(i,version):
 
         #Compute the maximum percent change in each parameter after accounting for the existence of alternans. Then, store the results.
         PercentChangeArray1 = np.array([np.max(PercentChange(APD[(n%2) == 0])),np.max(PercentChange(Cai_max[(n%2) == 0])),np.max(PercentChange(Cai_min[(n%2) == 0])),np.max(PercentChange(CaSR_max[(n%2) == 0])),np.max(PercentChange(CaSR_min[(n%2) == 0])),np.max(PercentChange(Nai_max[(n%2) == 0])),np.max(PercentChange(Nai_min[(n%2) == 0])),np.max(PercentChange(D50[(n%2) == 0]))])
-        PercentChangeArray2 = np.array([np.max(PercentChange(APD[(n%2) == 1])),np.max(PercentChange(Cai_max[(n%2) == 1])),np.max(PercentChange(Cai_min[(n%2) == 1])),np.max(PercentChange(CaSR_max[(n%2) == 1])),np.max(PercentChange(CaSR_min[(n%2) == 1])),np.max(PercentChange(Nai_max[(n%2) == 1])),np.max(PercentChange(Nai_min[(n%2) == 1])),np.max(PercentChange(D50[(n%2) == 0]))])
+        PercentChangeArray2 = np.array([np.max(PercentChange(APD[(n%2) == 1])),np.max(PercentChange(Cai_max[(n%2) == 1])),np.max(PercentChange(Cai_min[(n%2) == 1])),np.max(PercentChange(CaSR_max[(n%2) == 1])),np.max(PercentChange(CaSR_min[(n%2) == 1])),np.max(PercentChange(Nai_max[(n%2) == 1])),np.max(PercentChange(Nai_min[(n%2) == 1])),np.max(PercentChange(D50[(n%2) == 1]))])
         PercentChangeValue = np.max(np.array([(PercentChangeArray1),(PercentChangeArray2)]),axis=0)
         print("PCL = " + str(BCL) + "\t Percent Change: " + str(PercentChangeValue))
         outputfile[i_BCL] = PercentChangeValue
