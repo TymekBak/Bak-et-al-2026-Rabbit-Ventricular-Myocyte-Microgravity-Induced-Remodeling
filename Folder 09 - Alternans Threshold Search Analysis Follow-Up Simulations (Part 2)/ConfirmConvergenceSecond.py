@@ -22,9 +22,8 @@ def CheckConvergence_APD_BFD(i,version):
     a = pathlib.Path(path)
     outcomes_n_ref = np.transpose(np.loadtxt(a))
 
-    #Identify all of the unique BCLs and remove those that are below 105ms.
+    #Identify all of the unique BCLs.
     PCLs = np.unique(outcomes_n_ref[0])
-    PCLs = PCLs[PCLs >= 105]
     outputfile = np.zeros((len(PCLs), 8))
     i_BCL = 0
 
@@ -81,7 +80,7 @@ def CheckConvergence_APD_BFD(i,version):
 i = 0
 PercentChangeValues_Baseline = np.zeros((1001,8))
 Individuals = np.zeros(1001)
-BCL = [23,147,519,599,970,119,203,313,411,458,519,50,187,452,829,913,943]
+BCL = [312,726]
 while(i < len(BCL)):
     Individuals[i] = BCL[i]
     PercentChangeValues_Baseline[i] = CheckConvergence_APD_BFD(BCL[i],"Baseline")
