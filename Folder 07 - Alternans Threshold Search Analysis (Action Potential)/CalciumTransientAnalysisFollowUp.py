@@ -4,189 +4,81 @@ import matplotlib.pyplot as plt
 import scipy.integrate
 import pandas
 
+#Load the Data
+path = "ThresholdDescriptionCa.txt"
+a = pathlib.Path(path)
+Cn = np.loadtxt(a)
+
+APD_Exclusion = np.array([])
+Detection_Exclusion = np.array([])
+Reuptake1 = np.array([]) #This array is meant store the individuals who have less than 50% reuptake before threhsold
+Reuptake2 = np.array([]) #This array is meant store the individuals who have less than 50% reuptake after threshold
+
+#Assuming the individual is not in Reuptake1-2
+Reuptake3 = np.array([]) #This array is meant store the individuals who have less than 75% reuptake in both trials
+Reuptake4 = np.array([]) #This array is meant store the individuals who have less than 75% reuptake before threhsold
+
+#Assuming the individual is not in Reuptake3-4
+Reuptake5 = np.array([]) #This array is meant store the individuals who have less than 90% reuptake in both trials
+Reuptake6 = np.array([]) #This array is meant store the individuals who have less than 90% reuptake before threhsold
+
+#Assuming the individual is not in Reuptake5-6
+Reuptake7 = np.array([]) #This array is meant store the individuals who have less than 100% reuptake in both trials
+Reuptake8 = np.array([]) #This array is meant store the individuals who have less than 100% reuptake before threhsold
+
 j = 0
+while(j <= 1000):
+    #Confirm that in all cases the APD is greater than the BCL
+    if((abs(Cn[j][0]) < abs(Cn[j][1])) or (abs(Cn[j][0]) < abs(Cn[j][2])) or (abs(Cn[j][0] + 1) < abs(Cn[j][5])) or (abs(Cn[j][0] + 1) < abs(Cn[j][6]))):
+        APD_Exclusion = np.append(APD_Exclusion,j)
+        j = j + 1
+    #Confirm that the alternans threshold meets the 5ms criterion. At the time of the analysis there was a typo in this analysis which prevented six individuals from being labeled for a more detailed review. All of these individuals appear to be near the threshold; therefore, it is assumed that the overall results of the study hold.
+    if((abs(Cn[j][1] - Cn[j][2]) < 5) or (abs(Cn[j][5] - Cn[j][6]) >= 5)):
+        Detection_Exclusion = np.append(Detection_Exclusion,j)
+        print((np.array([(abs(Cn[j][1] - Cn[j][2])),(abs(Cn[j][5] - Cn[j][6]))])))
+        j = j + 1
+        continue
 
-while(j < 23):
-    #Cycle through each individual that requires a more through analysis
-    ID = [23,119,147,313,458,519,599,472]
-    #Load the necessary data
-    path = "Outcomes_t/Baseline_P" + str(ID[j]) + ".txt"
-    a = pathlib.Path(path)
-    Cn = np.loadtxt(a)
-    Cn = np.transpose(Cn)
-
-    path = "AlternansThresholds/Baseline_P" + str(ID[j]) + ".txt"
-    Threshold = pathlib.Path(path)
-    Threshold = np.transpose(np.loadtxt(Threshold))
-
-    #Extract the necessary action potential and calcium transient data.
-    Vm_Pre = Cn[10][Cn[0] == (Threshold+1)]
-    Vm_Post = Cn[10][Cn[0] == (Threshold)]
-    Cai_Pre = Cn[13][Cn[0] == (Threshold+1)]
-    Cai_Post = Cn[13][Cn[0] == (Threshold)]
-
-    Vm_Pre = Vm_Pre[0:int(10*Threshold+1)]
-    Vm_Post = Vm_Post[0:int(10*Threshold)]
-    Cai_Pre = Cai_Pre[0:int(10*Threshold)]
-    Cai_Post = Cai_Post[0:int(10*Threshold)]
-
-    #Compute the parameters that are needed to estimate the APDs.
-    Thresh_Pre = min(Vm_Pre) + 0.1*(max(Vm_Pre) - min(Vm_Pre))
-    Thresh_Post = min(Vm_Post) + 0.1*(max(Vm_Post) - min(Vm_Post))
-    inAPD_Pre = Vm_Pre[0] > Thresh_Pre
-    inAPD_Post = Vm_Post[0] > Thresh_Post
-
-
-    #Estimate the APDs.
-    i = 1
-    APD_Start1_Pre = 0
-    APD_Start2_Pre = 0
-    APD_Start3_Pre = 0
-    APD_End1_Pre = 0
-    APD_End2_Pre = 0
-    APD_End3_Pre = 0
-    APD1_Pre = 0
-    APD2_Pre = 0
-    APD3_Pre = 0
-
-    while(i < len(Vm_Pre)):
-        if(inAPD_Pre and (Vm_Pre[i] < Thresh_Pre)):
-            APD_End3_Pre = APD_End2_Pre
-            APD_End2_Pre = APD_End1_Pre
-            APD_End1_Pre = i - 1
-
-            APD3_Pre = APD2_Pre
-            APD2_Pre = APD1_Pre
-            APD1_Pre = APD_Start1_Pre - APD_End1_Pre
-
-            inAPD_Pre = False
-        elif(not(inAPD_Pre) and (Vm_Pre[i] > Thresh_Pre)):
-            APD_Start3_Pre = APD_Start2_Pre
-            APD_Start2_Pre = APD_Start1_Pre
-            APD_Start1_Pre = i - 1
-            inAPD_Pre = True
-        i = i + 1
-
-    i = 1
-    APD_Start1_Post = 0
-    APD_Start2_Post = 0
-    APD_Start3_Post = 0
-    APD_End1_Post = 0
-    APD_End2_Post = 0
-    APD_End3_Post = 0
-    APD1_Post = 0
-    APD2_Post = 0
-    APD3_Post = 0
-
-    while(i < len(Vm_Post)):
-        if(inAPD_Post and (Vm_Post[i] < Thresh_Post)):
-            APD_End3_Post = APD_End2_Post
-            APD_End2_Post = APD_End1_Post
-            APD_End1_Post = i - 1
-
-            APD3_Post = APD2_Post
-            APD2_Post = APD1_Post
-            APD1_Post = APD_Start1_Post - APD_End1_Post
-
-            inAPD_Post = False
-        elif(not(inAPD_Post) and (Vm_Post[i] > Thresh_Post)):
-            APD_Start3_Post = APD_Start2_Post
-            APD_Start2_Post = APD_Start1_Post
-            APD_Start1_Post = i - 1
-            inAPD_Post = True
-        i = i + 1
-
-    #Obtain the maximum cytosolic calcium concentration in the APD and the minimum cytosolic calcium concentration in the DI.
-    if(not(inAPD_Pre)):
-        Cai_Max1_Pre = np.max(Cai_Pre[(APD_Start2_Pre-1):(APD_End2_Pre)])
-        Cai_Max2_Pre = np.max(Cai_Pre[(APD_Start3_Pre-1):(APD_End3_Pre)])
-        Cai_ED1_Pre = np.min(Cai_Pre[(APD_End2_Pre-1):(APD_Start1_Pre)])
-        Cai_ED2_Pre = np.min(Cai_Pre[(APD_End3_Pre-1):(APD_Start2_Pre)])
+    #Compute the percent of recovery after the large calcium transient
+    if((Cn[j][9] >= Cn[j][10])):
+        a = (Cn[j][11] - Cn[j][12])/(Cn[j][9] - Cn[j][12])
     else:
-        Cai_Max1_Pre = np.max(Cai_Pre[(APD_Start2_Pre-1):(APD_End1_Pre)])
-        Cai_Max2_Pre = np.max(Cai_Pre[(APD_Start3_Pre-1):(APD_End2_Pre)])
-        Cai_ED1_Pre = np.min(Cai_Pre[(APD_End1_Pre-1):(APD_Start1_Pre)])
-        Cai_ED2_Pre = np.min(Cai_Pre[(APD_End2_Pre-1):(APD_Start2_Pre)])
-
-    if(not(inAPD_Post)):
-        Cai_Max1_Post = np.max(Cai_Post[(APD_Start2_Post-1):(APD_End2_Post)])
-        Cai_Max2_Post = np.max(Cai_Post[(APD_Start3_Post-1):(APD_End3_Post)])
-        Cai_ED1_Post = np.min(Cai_Post[(APD_End2_Post-1):(APD_Start1_Post)])
-        Cai_ED2_Post = np.min(Cai_Post[(APD_End3_Post-1):(APD_Start2_Post)])
-    else:
-        Cai_Max1_Post = np.max(Cai_Post[(APD_Start2_Post-1):(APD_End1_Post)])
-        Cai_Max2_Post = np.max(Cai_Post[(APD_Start3_Post-1):(APD_End2_Post)])
-        Cai_ED1_Post = np.min(Cai_Post[(APD_End1_Post-1):(APD_Start1_Post)])
-        Cai_ED2_Post = np.min(Cai_Post[(APD_End2_Post-1):(APD_Start2_Post)])
-        
-    #Plot and print the results to better understand what is going on in these special cases.
-    plt.figure()
-    plt.subplot(2,2,1)
-    plt.plot(Cai_Pre)
-    plt.xlabel("Time (ms)")
-    plt.ylabel("Cai (microM)")
-    plt.title("Before Alternans for Baseline " + str(ID[j]))
-
-    plt.axhline(Cai_Max1_Pre,color=(0,0,0))
-    plt.axhline(Cai_Max2_Pre,color=(0,0,0))
-    plt.axhline(Cai_ED1_Pre,color=(0,0,0))
-    plt.axhline(Cai_ED2_Pre,color=(0,0,0))
-
-    plt.axvline(APD_Start1_Pre,color=(0,0,0))
-    plt.axvline(APD_Start2_Pre,color=(0,0,0))
-    plt.axvline(APD_Start3_Pre,color=(0,0,0))
-    plt.axvline(APD_End3_Pre,color=(0,0,0))
-    plt.axvline(APD_End1_Pre,color=(0,0,0))
-    plt.axvline(APD_End2_Pre,color=(0,0,0))
-
-    plt.subplot(2,2,2)
-    plt.plot(Cai_Post)
-    plt.xlabel("Time (ms)")
-    plt.ylabel("Cai (microM)")
-    plt.title("After Alternans for Baseline " + str(ID[j]))
-
-    plt.axhline(Cai_Max1_Post,color=(0,0,0))
-    plt.axhline(Cai_Max2_Post,color=(0,0,0))
-    plt.axhline(Cai_ED1_Post,color=(0,0,0))
-    plt.axhline(Cai_ED2_Post,color=(0,0,0))
-
-    plt.axvline(APD_Start1_Post,color=(0,0,0))
-    plt.axvline(APD_Start2_Post,color=(0,0,0))
-    plt.axvline(APD_Start3_Post,color=(0,0,0))
-    plt.axvline(APD_End3_Post,color=(0,0,0))
-    plt.axvline(APD_End1_Post,color=(0,0,0))
-    plt.axvline(APD_End2_Post,color=(0,0,0))
-
-    plt.subplot(2,2,3)
-    plt.plot(Vm_Pre)
-    plt.axhline(Thresh_Pre,color=(0,0,0))
-    plt.xlabel("Time (ms)")
-    plt.ylabel("Vm (mV)")
-    plt.title("Before Alternans for Baseline " + str(ID[j]))
-
-    plt.axvline(APD_Start1_Pre,color=(0,0,0))
-    plt.axvline(APD_Start2_Pre,color=(0,0,0))
-    plt.axvline(APD_Start3_Pre,color=(0,0,0))
-    plt.axvline(APD_End3_Pre,color=(0,0,0))
-    plt.axvline(APD_End1_Pre,color=(0,0,0))
-    plt.axvline(APD_End2_Pre,color=(0,0,0))
-
-
-    plt.subplot(2,2,4)
-    plt.plot(Vm_Post)
-    plt.axhline(Thresh_Post,color=(0,0,0))
-    plt.ylabel("Vm (mV)")
-    plt.xlabel("Time (ms)")
-    plt.title("After Alternans for Baseline " + str(ID[j]))
-
-    plt.axvline(APD_Start1_Post,color=(0,0,0))
-    plt.axvline(APD_Start2_Post,color=(0,0,0))
-    plt.axvline(APD_Start3_Post,color=(0,0,0))
-    plt.axvline(APD_End3_Post,color=(0,0,0))
-    plt.axvline(APD_End1_Post,color=(0,0,0))
-    plt.axvline(APD_End2_Post,color=(0,0,0))
-    plt.show()
-    print("Before Threshold for Individual: " + str(j) + "\t CaT1 = " + str(Cai_Max1_Pre - Cai_ED1_Pre) + "\t CaT2 = " + str(Cai_Max2_Pre - Cai_ED2_Pre))
-    print("After Threshold for Individual: " + str(j) + "\t CaT1 = " + str(Cai_Max1_Post - Cai_ED1_Post) + "\t CaT2 = " + str(Cai_Max2_Post - Cai_ED2_Post))
-    j = j + 1
+        a = (Cn[j][12] - Cn[j][11])/(Cn[j][10] - Cn[j][11])
     
+    if((Cn[j][13] >= Cn[j][14])):
+        b = (Cn[j][15] - Cn[j][16])/(Cn[j][13] - Cn[j][16])
+    else:
+        b = (Cn[j][16] - Cn[j][15])/(Cn[j][14] - Cn[j][15])
+    
+    #This part of the code confirmed that the only deviations are for cases where only marginal differences in end diastolic intervals were observed
+    #if((a > 1) or (a < 0) or (b > 1) or (b < 0)):
+        #print(a)
+        #print(b)
+    
+    #Extract Individuals for Reuptake arrays
+    if(abs(a) >= 0.5):
+        Reuptake1 = np.append(Reuptake1,j)
+    elif(abs(a) >= 0.75):
+        Reuptake3 = np.append(Reuptake3,j)
+    elif(abs(a) >= 0.9):
+        Reuptake5 = np.append(Reuptake5,j)
+    else:
+        Reuptake7 = np.append(Reuptake7,j)
+    
+    if(abs(b) >= 0.5):
+        Reuptake2 = np.append(Reuptake2,j)
+    elif(abs(b) >= 0.75):
+        Reuptake4 = np.append(Reuptake4,j)
+    elif(abs(b) >= 0.9):
+        Reuptake6 = np.append(Reuptake6,j)
+    else:
+        Reuptake8 = np.append(Reuptake8,j)
+    j = j + 1
+print(APD_Exclusion)
+print(Detection_Exclusion)
+print(Reuptake1)
+print(Reuptake2)
+print(Reuptake3)
+print(Reuptake4)
+print(Reuptake5)
+print(Reuptake6)
