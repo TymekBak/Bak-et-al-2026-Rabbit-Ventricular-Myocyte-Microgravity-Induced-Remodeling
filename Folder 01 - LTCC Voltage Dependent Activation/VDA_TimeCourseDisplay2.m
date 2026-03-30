@@ -34,7 +34,7 @@ set(a.rightAxes,"FontSize",20,"XTick",9800:200:10000)
 Baseline2 = readmatrix("Results1/Baseline.txt");
 Manuscript2 = readmatrix("Results1/Model6.txt");
 
-%% Generate the Current-Voltage and Activation Plots for the computational model before and after reparametrization.
+%% Generate the Current-Voltage and Activation Plots for the computational model before and after LTCC reparametrization.
 figure(3)
 clf
 plot(Baseline2(:,1),Baseline2(:,2), "LineWidth",2,"Color","blue")
