@@ -1,4 +1,4 @@
-%% Transcript the values from the simulation to plot the result.
+%% Transcribe the values from the simulation to plot the result.
 Model = ["Baseline", "Microgravity","g_{RyR}","g_{leak}","Kmf_{SERCA}","g_{LTCC}", "v_{th}","g_{NaK}"];
 APD_Alternans_A1 = [239,263,248,239,238,256,250,238];
 CaT_Alternans_A1 = [243,277,256,244,243,262,255,242];
