@@ -30,7 +30,7 @@ a = breakxaxis([1000,9600],0);
 set(a.leftAxes,"FontSize",20,"XTick",0:200:1000)
 set(a.rightAxes,"FontSize",20,"XTick",9800:200:10000)
 
-%% Extract the peak LTCC current and the LTCC conductance that is associated with it.
+%% Extract the peak LTCC currents and the LTCC conductances that are associated with them.
 Baseline2 = readmatrix("Results1/Baseline.txt");
 Manuscript2 = readmatrix("Results1/Model6.txt");
 
