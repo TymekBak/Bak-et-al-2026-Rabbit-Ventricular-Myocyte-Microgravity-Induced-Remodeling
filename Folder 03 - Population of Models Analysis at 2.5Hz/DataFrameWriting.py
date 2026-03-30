@@ -38,7 +38,7 @@ DataFrame = pandas.DataFrame(DataFrame)
 print(DataFrame)
 DataFrame.to_csv("SimulationData_BCL400A.csv")
 
-#Define a function that extracts the input and output data for a specific individual (beat B). This is repeated so that any alternans that are present do not influence the results.
+#Define a function that extracts the input and output data for a specific individual (beat B). This is repeated so that any alternans that are accounted for.
 def ExtractIndividual(i,version):
     path = "Individuals/" + version + "_P" + str(i) + ".txt"
     a = pathlib.Path(path)
