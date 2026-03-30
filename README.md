@@ -15,6 +15,8 @@ The following code can be used to verify the figures and statements made in the 
 •	The code was run on three different computers using a combination of MacOS and Windows operating systems.\
 •	The code is written using a combination of MATLAB, Python, and C/C++. Reproducing the analysis also requires the operating system to be able to use Makefiles.\
 •	If the code contains a path, it is likely that this line will need to be changed to run the code properly.
+•	Figures 6-8 in the thesis used minimum cytosolic calcium instead of end diastolic calcium. This does not impact the final results.
+•	Figures 3,5 in the thesis excluded the wrong individuals. This does not impact the final results and is corrected in this repository.
 ### ***Folder 1 - LTCC Voltage Dependent Activation:***
 This folder can be used to recreate Figure 1 in the thesis. The simulation protocol is meant to characterize the behavior of the L-type Ca2+ channel (LTCC) with a voltage clamp analysis.\
 *The following elements are added to this folder:*\
