@@ -4,8 +4,8 @@
 #include <cmath>
 
 //Copy and paste these run commands into a terminal to run the simulation after executing the makefile.
-//      Run Command: ./Mahajan_ICa_Characterization Individuals/Baseline.txt Results1/Baseline.txt Results2/Baseline.txt
-//      Run Command: ./Mahajan_ICa_Characterization Individuals/Model6.txt Results1/Model6.txt Results2/Model6.txt
+//      Run Command: ./MahajanRecorder Individuals/Baseline.txt Results1/Baseline.txt Results2/Baseline.txt
+//      Run Command: ./MahajanRecorder Individuals/Model6.txt Results1/Model6.txt Results2/Model6.txt
 
 //Model Input Parameters:
 // 1. gRyR: SR Release Flux Strength
