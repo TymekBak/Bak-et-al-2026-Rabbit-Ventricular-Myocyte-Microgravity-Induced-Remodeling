@@ -43,10 +43,13 @@ def CheckConvergence_APD_BFD(version):
         Nai_min = np.transpose(np.reshape(outcomes_n[8], shape=(100,-1)))
         D50 = np.transpose(np.reshape(outcomes_n[9], shape=(100,-1)))
 
-        #Compute the maximum percent change in each parameter after accounting for the existence of alternans. Then, store the results.
+        #Compute the maximum percent change in each evaluated biomarker for the last 50 even beats
         PercentChangeArray1 = np.array([np.max(PercentChange(APD[(n%2) == 0])),np.max(PercentChange(Cai_max[(n%2) == 0])),np.max(PercentChange(Cai_min[(n%2) == 0])),np.max(PercentChange(CaSR_max[(n%2) == 0])),np.max(PercentChange(CaSR_min[(n%2) == 0])),np.max(PercentChange(Nai_max[(n%2) == 0])),np.max(PercentChange(Nai_min[(n%2) == 0])),np.max(PercentChange(D50[(n%2) == 0]))])
+        #Compute the maximum percent change in each evaluated biomarker for the last 50 odd beats
         PercentChangeArray2 = np.array([np.max(PercentChange(APD[(n%2) == 1])),np.max(PercentChange(Cai_max[(n%2) == 1])),np.max(PercentChange(Cai_min[(n%2) == 1])),np.max(PercentChange(CaSR_max[(n%2) == 1])),np.max(PercentChange(CaSR_min[(n%2) == 1])),np.max(PercentChange(Nai_max[(n%2) == 1])),np.max(PercentChange(Nai_min[(n%2) == 1])),np.max(PercentChange(D50[(n%2) == 1]))])
+        #Determine the maximum percent change for any evaluated biomarker in the last 100 beats, after accounting for alternans.
         PercentChangeValue = np.max(np.array([(PercentChangeArray1),(PercentChangeArray2)]),axis=0)
+        #Print a summary of the analysis.
         print("Version: " + version + " PCL = " + str(BCL) + "\t Percent Change: " + str(PercentChangeValue))
         outputfile[i_BCL] = PercentChangeValue
         i_BCL = i_BCL + 1
