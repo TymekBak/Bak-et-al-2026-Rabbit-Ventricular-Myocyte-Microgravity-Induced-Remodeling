@@ -288,7 +288,7 @@ int main(int argc, char *argv[]) {
             //Round the time variable to prevent drift
             t = PCL*(n - 1);
 
-            //Compute and update the threshold variables in an alternans insensitive manner for calcium-based parameters, and in an alternans sensitive manner for the APD.
+            //Compute and update the threshold variables.
             if((fmod(n,2) == 0)){
                 Vm_threshA = Vm_min + (Vm_max - Vm_min)*0.1;
                 Cai_thresh50A = VM.ci + (Cai_max - VM.ci)*0.5;
