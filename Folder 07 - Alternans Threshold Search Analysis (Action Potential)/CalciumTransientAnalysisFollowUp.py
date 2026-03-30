@@ -7,7 +7,7 @@ import pandas
 j = 0
 
 while(j < 23):
-    #Cycle through each individual that requires a more through analysis
+    #Cycle through each individual that requires a more detailed analysis
     ID = [23,119,147,313,458,519,599,472]
     #Load the necessary data
     path = "Outcomes_t/Baseline_P" + str(ID[j]) + ".txt"
