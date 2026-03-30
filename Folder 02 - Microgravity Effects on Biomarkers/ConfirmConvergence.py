@@ -13,7 +13,7 @@ def PercentChange(C):
         i = i + 1
     return(C)
 
-#Define a function that evaluates the biomarkers of each simulation to evaluate convergence to steady-state.
+#Define a function that studies the biomarkers of each simulation to evaluate convergence to steady-state.
 def CheckConvergence_APD_BFD(version):
     #Load the files of interest
     path = "Outcomes_n/" + version + ".txt"
