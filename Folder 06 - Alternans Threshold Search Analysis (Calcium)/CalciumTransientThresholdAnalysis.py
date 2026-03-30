@@ -11,7 +11,7 @@ Cn = np.loadtxt(a)
 
 #Prepare arrays for storing individuals that meet specific criteria.
 APD_Exclusion = np.array([]) #This array is meant to store individuals who have APD > BCL.
-Detection_Exclusion = np.array([]) #This array is meant to store individuals who fail to exhibit alternans.
+Detection_Exclusion = np.array([]) #This array is meant to store individuals who fail to capture the alternans threshold.
 
 Reuptake1 = np.array([]) #This array is meant store the individuals who have less than 50% reuptake before threshold
 Reuptake2 = np.array([]) #This array is meant store the individuals who have less than 50% reuptake after threshold
