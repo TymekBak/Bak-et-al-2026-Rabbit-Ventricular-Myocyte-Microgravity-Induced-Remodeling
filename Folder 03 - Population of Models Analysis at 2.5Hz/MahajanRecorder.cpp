@@ -14,7 +14,7 @@ using namespace std;
 #include <sys/types.h>
 #include <sys/stat.h>
 
-//Refer to ExecutionFile_Baseline.txt for the command line prompts to run this code.
+//Refer to ExecutionFile.txt for the command line prompts to run this code.
 
 //Model Input Parameters:
 // 1. gRyR: SR Release Flux Strength
