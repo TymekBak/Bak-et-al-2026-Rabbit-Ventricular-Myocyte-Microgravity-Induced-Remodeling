@@ -50,7 +50,8 @@ for n = 1:length(directory)
     saveas(CaT,("Bifurcation Diagrams/CaT " + file(10:13) + ".png"))
     saveas(APD,("Bifurcation Diagrams/APD " + file(10:13) + ".png"))
     saveas(Both,("Bifurcation Diagrams/Both " + file(10:13) + ".png"))
-    
+
+    %% Determine the alternans thresholds for this individual.
     Alternans1 = abs(APD1(1,:) - APD1(2,:));
     Alternans2 = abs(CaT1(1,:) - CaT1(2,:));
     Threshold1 = 0;
