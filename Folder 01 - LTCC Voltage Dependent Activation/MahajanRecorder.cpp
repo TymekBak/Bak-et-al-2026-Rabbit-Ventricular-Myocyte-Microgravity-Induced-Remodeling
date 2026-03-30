@@ -106,7 +106,7 @@ int main(int argc, char *argv[]) {
         VM.nao = 136.0;
         VM.nai = 0.000000001;
         VM.cao = 1.8;
-        VM.xir = 0; //This flux is set to zero because it needs an initial condition and the simulation assumes complete SR unloading is achieved.
+        VM.xir = 0; //This flux is set to zero because it needs an initial condition and the simulation assumes that this flux does not influence the LTCC.
 
         //Apply the model parameters to the cell object
         VM.gRyR = input2[0];
