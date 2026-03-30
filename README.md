@@ -38,7 +38,7 @@ This folder can be used to recreate Figure 5 in the thesis. The necessary values
 •	**DataFrameWriting.py:** This file is used to extract data for odd and even steady-state beats for every individual in the population.\
 •	**ConfirmConvergence.py:** This script studies the biomarkers in the last 100 beats of the simulation to determine how well the system converged to steady-state. The printout can be examined to study any drift that occurs.\
 •	**TimeCourseScreening.py:** This script studies the action potential and calcium transient properties to ensure that the model behaves in a physiological manner.\
-•	**TimeCourseDisplay.py:** This code extracts action potential and calcium transient time course traces from the simulations for a 1000ms interval and stores them in a text file.\
+•	**TimeCourseDisplay.py:** This code extracts action potential and calcium transient time course traces from the simulations for a 2000ms interval and stores them in a text file.\
 •	**PopulationDescriptionTraces.m:** This code creates time course traces for each member of the population of models. The data from *TimeCourseDisplay.py* is used in this plot and the exclusion criteria from the alternans analysis are used to exclude the appropriate traces from the image.\
 •	**DataAnalysisBaselineOnly.m:** This code processes and plots the data from *DataFrameWriting.py*. The statistical significance of parameter correlations is also computed at this stage. The exclusion of specific individuals from the population is applied at this point in the analysis.\
 •	**SMC_SA3_sensitivity_Baseline.m:** This is an adaptation of a MATLAB script from another study that finishes the population of models analysis and generates the appropriate plots.\
