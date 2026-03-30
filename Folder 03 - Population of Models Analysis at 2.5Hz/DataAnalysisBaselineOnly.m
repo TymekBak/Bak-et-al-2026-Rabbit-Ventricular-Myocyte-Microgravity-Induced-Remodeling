@@ -12,7 +12,7 @@ DataA_Baseline_Output = DataA(1:1001,[17,20,18,19,24]);
 DataB_Baseline_Output = DataB(1:1001,[17,20,18,19,24]);
 
 %% Remove individuals that failed in the primary and follow-up alternans analysis
-ExclusionIndex = unique([23,50,119,147,203,312,313,411,452,458,519,599,726,829,913,943,970]);
+ExclusionIndex = 1 + unique([23,50,119,147,203,312,313,411,452,458,519,599,726,829,913,943,970]);
 a = [];
 
 for i = 1:1001
