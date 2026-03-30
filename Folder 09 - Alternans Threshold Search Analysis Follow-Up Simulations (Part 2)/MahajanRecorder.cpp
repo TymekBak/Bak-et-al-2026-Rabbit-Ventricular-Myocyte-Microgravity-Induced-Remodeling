@@ -53,8 +53,8 @@ using namespace std;
 // 17. c2: LTCC Markov Model State
 // 18. xi1ca: LTCC Markov Model State
 // 19. xi1ba: LTCC Markov Model State
-// 20. xi1ca: LTCC Markov Model State
-// 21. xi1ba: LTCC Markov Model State
+// 20. xi2ca: LTCC Markov Model State
+// 21. xi2ba: LTCC Markov Model State
 // 22. nai: Sodium Concentration
 // 23. xtof: Transient Outward K+ Current Gating Variable (Fast Component)
 // 24. ytof: Transient Outward K+ Current Gating Variable (Fast Component)
