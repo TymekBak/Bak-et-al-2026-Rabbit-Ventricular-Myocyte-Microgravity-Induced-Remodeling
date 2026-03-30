@@ -20,7 +20,7 @@ while(j <= 1):
     Vm1 = Cn[9][(len(Cn[9])-801):(len(Cn[9])-400)]
     Vm2 = Cn[9][(len(Cn[9])-401):len(Cn[9])]
 
-    #Load the first output data file
+    #Load the output data file
     path = "Outcomes_n/" +  Individuals[j]
     a = pathlib.Path(path)
     Cn = np.loadtxt(a)
@@ -29,16 +29,8 @@ while(j <= 1):
     #Extract the necessary parameters
     APD1 = Cn[1][(len(Cn[1]) - 2)]
     APD2 = Cn[1][(len(Cn[1]) - 1)]
-
-    #Load the second output data file
-    path = "ValidationVariables/" +  Individuals[j]
-    a = pathlib.Path(path)
-    Cn = np.loadtxt(a)
-    Cn = np.transpose(Cn)
-
-    #Extract the necessary parameters
-    TTP1 = Cn[10][(len(Cn[1]) - 2)]
-    TTP2 = Cn[10][(len(Cn[1]) - 1)]
+    TTP1 = Cn[11][(len(Cn[1]) - 2)]
+    TTP2 = Cn[11][(len(Cn[1]) - 1)]
 
     #Apply the tests for individual exclusion
     Test = np.zeros(4)
