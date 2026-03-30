@@ -3,7 +3,7 @@ AP_Traces_Baseline = readmatrix("AP_Traces_Baseline.txt");
 Ca_Traces_Baseline = readmatrix("Ca_Traces_Baseline.txt")/1000;
 
 %% Eliminate the individuals who failed in the alternans analysis. See Folders 6-10 for details.
-ExclusionIndex = unique([23,50,119,147,203,312,313,411,452,458,519,599,726,829,913,943,970]);
+ExclusionIndex = 1 + unique([23,50,119,147,203,312,313,411,452,458,519,599,726,829,913,943,970]);
 a = [];
 
 for i = 1:1001
