@@ -25,7 +25,7 @@ t0_5_ILTCC1 = 0; thresh1 = false;
 t0_5_ILTCC2 = 0; thresh2 = false;
 start1 = 0; start2 = 0; end1 = 0; end2 = 0;
 
-%% Compute the time to 50% 
+%% Compute the time for exponential decay
 for i = 1:400
     if(~thresh1 && (abs(ILTCC1_segment(i)) == max(abs(ILTCC1_segment))))
         t0_5_ILTCC1 = i;
