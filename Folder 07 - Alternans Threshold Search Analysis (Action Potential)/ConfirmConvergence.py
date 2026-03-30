@@ -59,7 +59,7 @@ def CheckConvergence_APD_BFD(i,version):
         PercentChangeValue = np.max(np.array([(PercentChangeArray1),(PercentChangeArray2)]),axis=0)
         outputfile[i_BCL] = PercentChangeValue
         i_BCL = i_BCL + 1
-    #Print a summary of the analysis.
+    #Find the maximum drift in the analysis. If the drift is non-zero print it and if it is greater than 0.5%, add a warning. In all cases save the results.
     if(np.max(outputfile) >= 0.5):
         print("CAUTION: " + version + "_P" + str(i) + ".txt")
         print(outputfile)
