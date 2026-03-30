@@ -26,7 +26,7 @@ while(j <= 14):
     Cn = Cn[Index]
     Cn = np.transpose(Cn)
 
-    #Extract the voltage and calcium traces
+    #Extract the voltage traces
     Vm1 = Cn[10][(len(Cn[9])-801):(len(Cn[9])-400)]
     Vm2 = Cn[10][(len(Cn[9])-401):len(Cn[9])]
 
