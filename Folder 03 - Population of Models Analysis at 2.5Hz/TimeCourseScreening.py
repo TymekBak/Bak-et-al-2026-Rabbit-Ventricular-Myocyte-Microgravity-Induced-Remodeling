@@ -19,7 +19,7 @@ while(j <= 1000):
     Cai1 = Cn[12][(len(Cn[12])-801):(len(Cn[12])-400)]
     Cai2 = Cn[12][(len(Cn[12])-401):len(Cn[12])]
 
-    #Load the first output data file
+    #Load the output data file
     path = "Outcomes_n/Baseline_P" + str(j) + ".txt"
     a = pathlib.Path(path)
     Cn = np.loadtxt(a)
