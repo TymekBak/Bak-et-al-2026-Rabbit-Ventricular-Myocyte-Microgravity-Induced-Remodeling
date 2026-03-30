@@ -4,7 +4,7 @@ The following code can be used to verify the figures and statements made in the 
 •	**cell.h**: This is a header file for the cell object in the simulations. It is the same in each folder.\
 •	**cell.cc**: This is the main file for the cell object in the simulations. With the exception of Folder 1, it is the same in each folder.\
 •	**InitialCondition.csv**: This file describes the initial condition of the cell for each folder. It is the same in each folder; however, *Folder 1* overwrites some initial values directly in the code.\
-•	**MahajanRecorder.cpp**: This is the core simulation script.\
+•	**MahajanRecorder.cpp**: This is the core simulation script. The comments in this file describe the input and output file format.\
 •	**Individuals**: This subfolder stores the text files that define specific model variations. *Folders 3, 6, and 7* populate this subfolder using a MATLAB script.\
 •	**Outcomes_n**: This subfolder stores the text files that contain the outcomes of each simulation. This subfolder is absent in *Folder 1*.\
 •	**Outcomes_t**: This subfolder stores the text files that contain the waveforms for each simulation. The last 10000ms are recorded for each basic cycle length (BCL) – Individual combination with a 1ms sampling rate. This subfolder is absent in *Folder 1*.\
