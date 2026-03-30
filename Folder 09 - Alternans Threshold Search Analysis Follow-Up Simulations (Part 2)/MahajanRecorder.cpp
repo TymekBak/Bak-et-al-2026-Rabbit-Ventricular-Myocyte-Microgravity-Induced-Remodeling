@@ -133,7 +133,7 @@ int main(int argc, char *argv[]) {
 
     while(PCL >= 80){
         
-        //Define Variables for Describing the Previous Time Step
+        //Define the Simulation Parameters
         double dt = 0.01;
         double stim_time= 2;
         double t = 0;
