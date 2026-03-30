@@ -7,7 +7,7 @@ The following code can be used to verify the figures and statements made in the 
 •	**MahajanRecorder.cpp**: This is the core simulation script.\
 •	**Individuals**: This subfolder stores the text files that define specific model variations. *Folders 3, 6, and 7* populate this subfolder using a MATLAB script.\
 •	**Outcomes_n**: This subfolder stores the text files that contain the outcomes of each simulation. This subfolder is absent in *Folder 1*.\
-•	**Outcomes_t**: This subfolder stores the text files that contain the waveform for each simulation. The last 10000ms are recorded for each basic cycle length (BCL) – Individual combination with a 1ms sampling rate. This subfolder is absent in *Folder 1*.\
+•	**Outcomes_t**: This subfolder stores the text files that contain the waveforms for each simulation. The last 10000ms are recorded for each basic cycle length (BCL) – Individual combination with a 1ms sampling rate. This subfolder is absent in *Folder 1*.\
 •	**Makefile**: This file can be used to compile the code.\
 •	**ExecutionFile.txt**: This text file contains commands that can be copied into a terminal window to run the main simulation. *Folders 3, 6, and 7* generate this file with a MATLAB script. This will only work if the terminal is open to the appropriate directory and all of the prerequisite files are present.
 ### ***Note:***
