@@ -252,7 +252,7 @@ int main(int argc, char *argv[]) {
             //Update the beat number variable.
             n = n + 1;
 
-            //Update the threshold variables
+            //Compute and update the threshold variables.
             Vm_thresh = Vm_min + (Vm_max - Vm_min)*0.1;
             Cai_thresh50 = Cai_min + (Cai_max - Cai_min)*0.5;
 
@@ -381,7 +381,7 @@ int main(int argc, char *argv[]) {
                 //Update the beat number variable.
                 n = n + 1;
 
-                //Update the threshold variables
+                //Compute and update the threshold variables.
                 Vm_thresh = Vm_min + (Vm_max - Vm_min)*0.1;
                 Cai_thresh50 = Cai_min + (Cai_max - Cai_min)*0.5;
 
