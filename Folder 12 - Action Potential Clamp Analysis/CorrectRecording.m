@@ -3,7 +3,7 @@ files = struct2table(dir("Baseline APs/*.txt"));
 files = files.name;
 
 for j = 1:length(files)
-    %% Extract every files and compute the APD threshold
+    %% Extract every file and compute the APD threshold
     if(startsWith(files(j),"._"))
         continue
     end
