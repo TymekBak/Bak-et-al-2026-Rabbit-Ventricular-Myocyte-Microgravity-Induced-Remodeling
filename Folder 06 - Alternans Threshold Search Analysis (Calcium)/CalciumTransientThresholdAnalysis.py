@@ -17,15 +17,15 @@ Reuptake1 = np.array([]) #This array is meant store the individuals who have les
 Reuptake2 = np.array([]) #This array is meant store the individuals who have less than 50% reuptake after threshold
 
 #Assuming the individual is not in Reuptake1-2
-Reuptake3 = np.array([]) #This array is meant store the individuals who have less than 75% reuptake in both trials
+Reuptake3 = np.array([]) #This array is meant store the individuals who have less than 75% reuptake before threshold
 Reuptake4 = np.array([]) #This array is meant store the individuals who have less than 75% reuptake before threshold
 
 #Assuming the individual is not in Reuptake3-4
-Reuptake5 = np.array([]) #This array is meant store the individuals who have less than 90% reuptake in both trials
+Reuptake5 = np.array([]) #This array is meant store the individuals who have less than 90% reuptake before threshold
 Reuptake6 = np.array([]) #This array is meant store the individuals who have less than 90% reuptake before threshold
 
 #Assuming the individual is not in Reuptake5-6
-Reuptake7 = np.array([]) #This array is meant store the individuals who have less than 100% reuptake in both trials
+Reuptake7 = np.array([]) #This array is meant store the individuals who have less than 100% reuptake before threshold
 Reuptake8 = np.array([]) #This array is meant store the individuals who have less than 100% reuptake before threshold
 
 j = 0
