@@ -83,7 +83,7 @@ for n = 1:length(directory)
     I1 = (Baseline(:,1) == Threshold1);
     I2 = (Baseline(:,1) == (Threshold1+1));
     I3 = (Baseline(:,1) == Threshold2);
-    I4 = (Baseline(:,1) == (Threshold1+2));
+    I4 = (Baseline(:,1) == (Threshold2+1));
 
     timecourses = figure(8);
     clf
