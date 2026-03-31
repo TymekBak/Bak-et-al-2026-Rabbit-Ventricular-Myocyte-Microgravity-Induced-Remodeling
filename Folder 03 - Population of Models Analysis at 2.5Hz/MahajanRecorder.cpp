@@ -63,15 +63,15 @@ using namespace std;
 
 //Outcomes_n (each row has the following values that are seperated with "   "; each value is calculated over the course of one BCL)
 //1. Beat Number
-//2. APD
+//2. Action Potential Duration
 //3. Maximum Cytoplasmic Calcium
 //4. End Diastolic Calcium
 //5. Maximum SR Calcium
 //6. Minimum SR Calcium
 //7. Maximum Cytoplasmic Sodium
 //8. Minimum Cytoplasmic Sodium
-//9. CaTD50 (Decay Only)
-//10. TTP
+//9. Calcium Transient Decay Interval (Peak to 50%)
+//10. Calcium Transient Time-to-Peak
 
 //Outcomes_t (each row has the following values that are seperated with "   "; each value is calculated with a 1ms sampling rate)
 //1. Time
