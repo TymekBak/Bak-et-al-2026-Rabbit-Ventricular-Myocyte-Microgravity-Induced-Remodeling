@@ -51,7 +51,7 @@ This folder describes a preliminary analysis that is not used to create any figu
 •	**AlternansThresholds:** This subfolder is used to store estimated locations of the alternans thresholds based on the results of this simulation.\
 •	**BFD_Generator_Complete.m:** This script reads the contents of *Outcomes_n* and uses them to estimate the alternans thresholds. The results are saved in *AlternansThresholds*.
 ### ***Folder 5 - Bifurcation Diagram Generation (Stage 2):***
-This folder can be used to recreate Figures 6-10. The approximate locations of the bifurcation point are copied from *Folder 4*. This part of the project involves generating a bifurcation diagram with a high-resolution description of frequencies near the bifurcation point. The code in this section is also used to prepare the raw action potential (AP) traces for *Folder 12*.\
+This folder can be used to recreate Figures 6-10. The approximate locations of the bifurcation points are copied from *Folder 4*. This part of the project involves generating a bifurcation diagram with a high-resolution description of frequencies near the bifurcation point. The code in this section is also used to prepare the raw action potential (AP) traces for *Folder 12*.\
 *The following elements are added to this folder:*\
 •	**AlternansThresholds:** This subfolder is used to store estimated locations of the alternans thresholds based on the results of this simulation.\
 •	**AlternansThresholdsGuess:** This subfolder is used to store estimated locations of the alternans thresholds based on the results of the previous simulation. These values are needed for this folder to work properly.\
